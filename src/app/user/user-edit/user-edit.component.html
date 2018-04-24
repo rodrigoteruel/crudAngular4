@@ -1,17 +1,27 @@
-<h5>UserEditComponent</h5>
-<form (submit)="update()">
+<h3>Atualizar Usuário</h3>
+<form (submit)="update()" (reset)="voltar()">
   <div class="row">
       <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-          <input type="text" class="form-control" name="first_name"[(ngModel)]="userEdit.first_name">
+          <label>First Name</label>
+          <input id="firstname" type="text" class="form-control" name="first_name"[(ngModel)]="userEdit.first_name">
       </div>
       <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <label>Last Name</label>
           <input type="text" class="form-control" name="last_name"[(ngModel)]="userEdit.last_name">
       </div>
       <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <label>Email</label>
           <input type="text" class="form-control" name="email"[(ngModel)]="userEdit.email">
       </div>
       <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-          <input  class="btn btn-success"  type="submit">
+          <button class="btn btn-primary"  type="submit" style="margin-top: 30px;">
+              <i class="fa fa-check"></i>
+              Atualizar
+          </button>
+          <button class="btn btn-danger" type="reset" style="margin-top: 30px;">
+              <i class="fa fa-times"></i>
+              Voltar
+          </button>
       </div>
     </div>
 </form>

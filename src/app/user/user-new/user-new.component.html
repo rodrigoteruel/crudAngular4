@@ -1,17 +1,23 @@
-<h3>UserNewComponent</h3>
+<h3>Novo Usuário</h3>
 <form (submit)="create()">
     <div class="row">
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-            <input  type="email" class="form-control" name="first_name"[(ngModel)]="newUser.first_name">
+        <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <label>First Name</label>
+            <input  type="email" class="form-control" name="first_name" [(ngModel)]="newUser.first_name">
         </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-            <input type="text"  class="form-control" name="last_name"[(ngModel)]="newUser.last_name">
+        <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <label>Last Name</label>
+            <input type="text"  class="form-control" name="last_name" [(ngModel)]="newUser.last_name">
         </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-            <input type="text"  class="form-control" name="email"[(ngModel)]="newUser.email">
+        <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <label>Email</label>
+            <input type="text"  class="form-control" name="email" [(ngModel)]="newUser.email">
         </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-            <input class="btn btn-success" type="submit">
+        <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <button class="btn  btn-primary"  type="submit" style="margin-top: 30px;">
+                <i class="fa fa-check"></i>
+                Novo
+            </button>            
         </div>
       </div>
 </form>

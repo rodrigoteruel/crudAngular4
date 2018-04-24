@@ -16,6 +16,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     CommonModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [UserService],

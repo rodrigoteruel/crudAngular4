@@ -30,7 +30,6 @@ export class UserComponent implements OnInit {
   }
 
   update(users: any){
-    console.log(users);
     const i = this.users.indexOf(users.original);
     this.users[i] = users.edited;
   }

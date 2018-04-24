@@ -1,7 +1,28 @@
-<h3>UserListComponent</h3>
+<h3>Lista de Usuários</h3>
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th class="text-center" scope="col">ID</th>
+            <th class="text-center"  scope="col">First Name</th>
+            <th class="text-center"  scope="col">Last Name</th>
+            <th class="text-center"  scope="col">Email</th>
+            <th class="text-center"  scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users" >
+            <td>{{user._id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td  class="text-center" >
+                <button type="button" class="btn btn-success" (click)="user.editable = !user.editable"><i class="fa fa-edit"></i>Editar</button>
+                <button type="button" class="btn btn-danger" (click)="destroy(user)"><i class="fa fa-trash"></i>Remover</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <div *ngFor="let user of users">
-  {{ user._id }} - {{ user.first_name }} - {{ user.last_name }} - {{ user.email }} 
-  <button type="button" class="btn btn-danger" (click)="destroy(user)">Destroy</button>
-  <button type="button" class="btn btn-primary" (click)="user.editable = !user.editable">Edit</button>
   <app-user-edit [user]="user" (updateUserEvent)="update($event)" *ngIf="user.editable"></app-user-edit>
 </div>
