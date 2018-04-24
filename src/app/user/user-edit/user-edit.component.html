@@ -1,7 +1,17 @@
 <h5>UserEditComponent</h5>
 <form (submit)="update()">
-  <input type="text" name="first_name"[(ngModel)]="userEdit.first_name">
-  <input type="text" name="last_name"[(ngModel)]="userEdit.last_name">
-  <input type="text" name="email"[(ngModel)]="userEdit.email">
-  <input type="submit">
+  <div class="row">
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <input type="text" class="form-control" name="first_name"[(ngModel)]="userEdit.first_name">
+      </div>
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <input type="text" class="form-control" name="last_name"[(ngModel)]="userEdit.last_name">
+      </div>
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <input type="text" class="form-control" name="email"[(ngModel)]="userEdit.email">
+      </div>
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <input  class="btn btn-success"  type="submit">
+      </div>
+    </div>
 </form>

@@ -1,8 +1,28 @@
-<h1>User Component</h1>
-{{ users | json}}
-<app-user-new (createNewUserEvent)="create($event)"></app-user-new>
-<app-user-list 
-    [users]="users" 
-    (destroyUserEvent)="destroy($event)"
-    (updateUserEvent)="update($event)"
-    ></app-user-list>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">      
+            <h1>User Component</h1>           
+            <table class="table table-bordered table-hover table-dark">
+                <thead>
+                    <tr>
+                    <th class="text-center" scope="col">ID</th>
+                    <th class="text-center"  scope="col">First Name</th>
+                    <th class="text-center"  scope="col">Last Name</th>
+                    <th class="text-center"  scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users" >
+                    <td>{{user._id}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>@{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <app-user-new (createNewUserEvent)="create($event)"></app-user-new>
+            <app-user-list [users]="users" (destroyUserEvent)="destroy($event)" (updateUserEvent)="update($event)">
+            </app-user-list>
+        </div>
+    </div>
+</div>
