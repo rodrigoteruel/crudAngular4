@@ -11,6 +11,7 @@ export class UserListComponent implements OnInit {
   @Input() users;
   @Output() destroyUserEvent = new EventEmitter()
   @Output() updateUserEvent = new EventEmitter()
+  @Output() cardUpdateEvent = new EventEmitter()
 
 
   constructor() { }
@@ -24,6 +25,10 @@ export class UserListComponent implements OnInit {
 
   update(users){
     this.updateUserEvent.emit(users);
+  }
+
+  edit(user){
+    this.cardUpdateEvent.emit(user);
   }
 
 }

@@ -13,6 +13,8 @@ export class UserComponent implements OnInit {
     new User(2,"Second","Last","email@email.com"),
     new User(3,"Third","Last","email@email.com")
   ];
+  listaNovo: number = 1;
+  user: User;
 
   constructor(private _userService: UserService) { }
 
@@ -22,6 +24,7 @@ export class UserComponent implements OnInit {
   
   create(user: User){
     this.users.push(user);
+    this.listaNovo = 1;
   }
 
   destroy(user: User){
@@ -32,6 +35,16 @@ export class UserComponent implements OnInit {
   update(users: any){
     const i = this.users.indexOf(users.original);
     this.users[i] = users.edited;
+    this.listaNovo = 1;    
+  }
+
+  backtolist(){
+    this.listaNovo = 1;
+  }
+
+  changetoedit(user: any){
+    this.listaNovo = 3;
+    this.user = user;
   }
 
   getUsers(){

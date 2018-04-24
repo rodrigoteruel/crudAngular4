@@ -16,7 +16,7 @@
             <td>{{user.last_name}}</td>
             <td>{{user.email}}</td>
             <td  class="text-center" >
-                <button type="button" class="btn btn-success" (click)="user.editable = !user.editable"><i class="fa fa-edit"></i>Editar</button>
+                <button type="button" class="btn btn-success" (click)="edit(user)"><i class="fa fa-edit"></i>Editar</button>
                 <button type="button" class="btn btn-danger" (click)="destroy(user)"><i class="fa fa-trash"></i>Remover</button>
             </td>
         </tr>

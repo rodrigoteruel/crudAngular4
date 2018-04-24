@@ -9,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class UserNewComponent implements OnInit {
   newUser = new User();
   @Output() createNewUserEvent = new EventEmitter();
+  @Output() voltaLista = new EventEmitter();
 
   constructor() { }
 
@@ -19,6 +20,11 @@ export class UserNewComponent implements OnInit {
     //call server to save
     this.createNewUserEvent.emit(this.newUser);
     this.newUser = new User();
+  }
+
+  voltar(){
+    true
+    this.voltaLista.emit(true);
   }
 
 }

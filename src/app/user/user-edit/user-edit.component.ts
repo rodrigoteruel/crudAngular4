@@ -9,6 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UserEditComponent implements OnInit {
   @Input() user: User;
   @Output() updateUserEvent = new EventEmitter();
+  @Output() voltarUserEvent = new EventEmitter();
 
   userEdit: User = new User();
   
@@ -21,12 +22,9 @@ export class UserEditComponent implements OnInit {
   update(){
     this.userEdit.editable = false;
     this.updateUserEvent.emit({original: this.user, edited: this.userEdit});
-
   }
   
   voltar(){
-    this.userEdit = this.user;
-    this.userEdit.editable = false;
-    this.updateUserEvent.emit({original: this.user, edited: this.userEdit});
+     this.voltarUserEvent.emit(3);
   }
 }

@@ -1,5 +1,5 @@
 <h3>Novo Usuário</h3>
-<form (submit)="create()">
+<form (submit)="create()" (reset)="voltar()">
     <div class="row">
         <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
             <label>First Name</label>
@@ -17,7 +17,11 @@
             <button class="btn  btn-primary"  type="submit" style="margin-top: 30px;">
                 <i class="fa fa-check"></i>
                 Novo
-            </button>            
+            </button> 
+            <button class="btn btn-danger" type="reset" style="margin-top: 30px;">
+                <i class="fa fa-times"></i>
+                Voltar
+            </button>           
         </div>
       </div>
 </form>

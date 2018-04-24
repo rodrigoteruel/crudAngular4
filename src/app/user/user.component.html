@@ -2,12 +2,26 @@
     <div class="card">
         <div class="card-body">      
             <h1>Usuário CRUD</h1>           
-            <app-user-new (createNewUserEvent)="create($event)"></app-user-new>
-            <app-user-list 
+            <button class="btn  btn-primary"  type="submit" style="float: right !important;" *ngIf="listaNovo == 1" (click)="this.listaNovo = 2">
+                <i class="fa fa-plus"></i>
+                Adicionar
+            </button>
+
+            <app-user-list *ngIf="listaNovo == 1"
                 [users]="users" 
                 (destroyUserEvent)="destroy($event)" 
-                (updateUserEvent)="update($event)">
+                (updateUserEvent)="update($event)"
+                (cardUpdateEvent)="changetoedit($event)">
             </app-user-list>
+
+            <app-user-new *ngIf="listaNovo == 2"
+                (createNewUserEvent)="create($event)"
+                (voltaLista)="this.listaNovo = $event">
+            </app-user-new>
+
+            <app-user-edit *ngIf="listaNovo == 3" [user]="user" 
+                (updateUserEvent)="update($event)" 
+                (voltarUserEvent)="backtolist()"></app-user-edit>
         </div>
     </div>
 </div>
